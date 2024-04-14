@@ -1,37 +1,39 @@
 {% set name = "pixi-pycharm" %}
-{% set version = "0.0.3" %}
+{% set version = "0.0.4" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/pavelzw/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 5179254a3bc5474bb42cb2a4618078ba4b6cebf7b987b1ef665dd321a31bb21d
+  - url: https://github.com/pavelzw/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
+    sha256: 01f20372f5d54a60e3f71bf72c45355472d34fd26dac6d35fc1d184e31c10081
+  - path: build_unix.sh  # [not build_win]
+  - path: build_win.sh  # [build_win]
 
 build:
+  string: win_{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [build_win]
+  string: unix_{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [not build_win]
   noarch: generic
-  script:
-    - mkdir -p $PREFIX/libexec
-    - echo "#!$PREFIX/bin/python" > $PREFIX/libexec/conda
-    - cat conda >> $PREFIX/libexec/conda
-    - sed -i '2d' $PREFIX/libexec/conda
-    - chmod +x $PREFIX/libexec/conda
+  script: ./build_unix.sh  # [not build_win]
+  script: ./build_win.sh  # [build_win]
   number: 0
 
 requirements:
   build:
     - sed
   run:
-    - __unix
+    - __unix  # [not build_win]
+    - __win  # [build_win]
     - python >=3.8
 
 test:
   commands:
-    - test -f $PREFIX/libexec/conda
+    - test -f $PREFIX/libexec/conda  # [not build_win]
+    # don't test windows builds because they are not solvable on unix (build platform)
 
 about:
-  home: https://github.com/pavelzw/pixi-pycharm
+  home: https://pixi.sh/dev/ide_integration/pycharm
   summary: Conda shim for PyCharm that proxies pixi
   license: BSD-3-Clause
   license_family: BSD

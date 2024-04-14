@@ -3,7 +3,7 @@ About pixi-pycharm-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pixi-pycharm-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/pavelzw/pixi-pycharm
+Home: https://pixi.sh/dev/ide_integration/pycharm
 
 Package license: BSD-3-Clause
 
