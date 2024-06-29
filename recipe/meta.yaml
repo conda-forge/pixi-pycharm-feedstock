@@ -1,5 +1,5 @@
 {% set name = "pixi-pycharm" %}
-{% set version = "0.0.5" %}
+{% set version = "0.0.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://github.com/pavelzw/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: 002aaddc8682f30483afe15f221ca355a723da7aace3abd5c2143f3634f7d629
+    sha256: 22fda478e5f04423e2cae19556786e52e19454fa24a18f2d1499da397951a3fb
   - path: build_unix.sh  # [not build_win]
   - path: build_win.sh  # [build_win]
 
