@@ -1,7 +1,7 @@
 build_win:
 - 'True'
 cdt_name:
-- cos6
+- cos7
 channel_sources:
 - conda-forge
 channel_targets:
