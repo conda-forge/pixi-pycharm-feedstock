@@ -3,13 +3,15 @@ About pixi-pycharm-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pixi-pycharm-feedstock/blob/main/LICENSE.txt)
 
-Home: https://pixi.sh/dev/ide_integration/pycharm
+Home: https://pixi.sh/latest/integration/editor/jetbrains
 
 Package license: BSD-3-Clause
 
 Summary: Conda shim for PyCharm that proxies pixi
 
 Development: https://github.com/pavelzw/pixi-pycharm
+
+Documentation: https://pixi.sh/latest/integration/editor/jetbrains
 
 Current build status
 ====================
