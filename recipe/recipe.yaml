@@ -1,7 +1,7 @@
 context:
   name: pixi-pycharm
   version: "0.0.8"
-  build: 1
+  build: 2
 
 package:
   name: ${{ name|lower }}
@@ -26,6 +26,7 @@ build:
         - echo "#!$PREFIX/bin/python" > $PREFIX/libexec/conda
         - cat conda >> $PREFIX/libexec/conda
         - sed -i '2d' $PREFIX/libexec/conda
+        - chmod +x $PREFIX/libexec/conda
   number: ${{ build }}
 
 requirements:
@@ -38,6 +39,10 @@ requirements:
     - python >=3.8
 
 tests:
+  - script:
+      - if: not build_win
+        then:
+          - test -x $PREFIX/libexec/conda
   - package_contents:
       files:
         - if: build_win
