@@ -7,7 +7,7 @@
 
 [project]
 name = "pixi-pycharm-feedstock"
-version = "3.50.0"  # conda-smithy version used to generate this file
+version = "3.52.2"  # conda-smithy version used to generate this file
 description = "Pixi configuration for conda-forge/pixi-pycharm-feedstock"
 authors = ["@conda-forge/pixi-pycharm"]
 channels = ["conda-forge"]
@@ -40,6 +40,7 @@ description = "List contents of pixi-pycharm-feedstock packages built for varian
 
 [feature.smithy.dependencies]
 conda-smithy = "*"
+shellcheck = "*"
 [feature.smithy.tasks.build-locally]
 cmd = "python ./build-locally.py"
 description = "Build packages locally using the same setup scripts used in conda-forge's CI"
