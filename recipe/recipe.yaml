@@ -44,6 +44,7 @@ tests:
         then:
           - test -x $PREFIX/libexec/conda
   - package_contents:
+      strict: true
       files:
         - if: build_win
           then:
