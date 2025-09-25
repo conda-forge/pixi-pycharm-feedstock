@@ -1,7 +1,7 @@
 context:
   name: pixi-pycharm
-  version: "0.0.8"
-  build: 2
+  version: "0.0.9"
+  build: 0
 
 package:
   name: ${{ name|lower }}
@@ -9,7 +9,7 @@ package:
 
 source:
   - url: https://github.com/pavelzw/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz
-    sha256: a7b9294417d7857814eb5e7d4731657fcc1481c903c486d0aeaa2cd356f4cf58
+    sha256: b839217f19615489d23e092457b420c036a9ac03c83326e70767d3f1d20d6928
 
 build:
   string: ${{ 'win' if build_win else 'unix' }}_h${{ hash }}_${{ build }}
@@ -44,6 +44,7 @@ tests:
         then:
           - test -x $PREFIX/libexec/conda
   - package_contents:
+      strict: true
       files:
         - if: build_win
           then:
