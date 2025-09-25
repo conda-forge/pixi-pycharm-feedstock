@@ -1,7 +1,6 @@
 context:
   name: pixi-pycharm
   version: "0.0.9"
-  build: 2
 
 package:
   name: ${{ name|lower }}
