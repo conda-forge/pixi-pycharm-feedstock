@@ -1,6 +1,6 @@
 context:
   name: pixi-pycharm
-  version: "0.0.9"
+  version: "0.0.10"
   build: 0
 
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   - url: https://github.com/pavelzw/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz
-    sha256: b839217f19615489d23e092457b420c036a9ac03c83326e70767d3f1d20d6928
+    sha256: 5240aa1f5e4c76cf75e901621a4f1ffaf232765235245462a6bee281a0395437
 
 build:
   string: ${{ 'win' if build_win else 'unix' }}_h${{ hash }}_${{ build }}
