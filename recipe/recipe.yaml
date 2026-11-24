@@ -1,5 +1,5 @@
 context:
-  version: "0.0.12"
+  version: "0.0.13"
   build: 0
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   - url: https://github.com/pavelzw/pixi-pycharm/archive/refs/tags/v${{ version }}.tar.gz
-    sha256: f4d87e968c3db0c8527b60e5103367beea7d2b3be899a18d646a1863d85de89e
+    sha256: 1c833847a45ceba99089c5bb59c9fb84686c33778135bc9db2203add7553d0cf
 
 build:
   string: ${{ 'win' if build_win else 'unix' }}_h${{ hash }}_${{ build }}
